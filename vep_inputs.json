@@ -1,0 +1,3 @@
+{
+    "VepWorkflow.separateVCF.input_vcf": "example-data/subset-sorted.vcf.gz"
+}
