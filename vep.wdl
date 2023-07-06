@@ -8,6 +8,9 @@ workflow VepWorkflow {
 	input:
 		body_vcf=separateVCF.body_vcf
 	}
+	scatter (oneVCF in splitVCF.file_paths) {
+		call testSplit {input: oneVCF=oneVCF}
+	}
 }
 
 task separateVCF {
@@ -37,4 +40,14 @@ task splitVCF {
 	output {
 	Array[String] file_paths = read_lines("file_list.txt")
 	}
+}
+
+task testSplit {
+	input {
+		File oneVCF
+	}
+	command <<<
+	set -euo pipefail
+	ls -l '~{oneVCF}'
+	>>>
 }
