@@ -1,5 +1,5 @@
 # code-challenge-wdl-vep-annotation
-Nextflow Implementation of LifeBit Technical Challenge
+A 48 hour challenge to implement vep annotation using WDL
 
 ## Testing WDL
 I have not used WDL before so am trying to get something resembling the Nextflow pipeline
@@ -9,7 +9,7 @@ I have not used WDL before so am trying to get something resembling the Nextflow
 2. Ensure you have a local instllation of Docker
 
 ## Building the Docker Image
-From the directory that contains the `Dockerfile`, run `docker built -t vep:v0.1`
+From the directory that contains the `Dockerfile`, run `docker build -t vep:v0.1 .`
 
 If you choose a to name your image differently, then change the runtime lines `docker: "test:v0.1"` in `vep.wdl` to your image name
 
